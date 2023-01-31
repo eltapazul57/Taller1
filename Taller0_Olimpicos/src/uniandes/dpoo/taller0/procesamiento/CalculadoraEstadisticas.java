@@ -260,6 +260,19 @@ public class CalculadoraEstadisticas
 
 		return estrellas;
 	}
+	
+	public String busquedaPaisDelAtleta(String atleta)
+	{
+		String pais = null;
+		Atleta atletadeverdad = buscarAtleta(atleta);
+		if (atletadeverdad != null)
+		{
+			 pais = atletadeverdad.darPais().darNombre();
+			
+		}
+		return pais;
+		
+	}
 
 	/**
 	 * Calcula cuál ha sido el país con el mejor desempeño en el evento.

@@ -67,6 +67,9 @@ public class ConsolaOlimpicos
 					System.out.println("Saliendo de la aplicación ...");
 					continuar = false;
 				}
+				else if (opcion_seleccionada==14 && calculadora != null)
+					ejecutarBusquedaPais();
+					
 				else if (calculadora == null)
 				{
 					System.out.println("Para poder ejecutar esta opción primero debe cargar un archivo de atletas.");
@@ -102,7 +105,8 @@ public class ConsolaOlimpicos
 		System.out.println("10. Consultar el atleta todoterreno");
 		System.out.println("11. Consultar los medallistas por país y género");
 		System.out.println("12. Consultar el porcentaje de atletas que son medallistas");
-		System.out.println("13. Salir de la aplicación\n");
+		System.out.println("13. Salir de la aplicación");
+		System.out.println("14. Buscar pais de atleta \n");
 	}
 
 	/**
@@ -248,6 +252,23 @@ public class ConsolaOlimpicos
 		{
 			System.out.println("El número ingresado no es válido. Por favor escriba un número entero.");
 		}
+	}
+	
+	private void ejecutarBusquedaPais()
+	{
+		System.out.println("Digite el atleta: \n");
+		String atleta = input("Ingrese el nombre del atleta \n");
+		String pais = calculadora.busquedaPaisDelAtleta(atleta);
+		if (pais == null)
+		{
+			System.out.println("No hay atleta con ese nombre");
+			
+		}
+		else
+		{
+			System.out.println(pais);
+		}
+		
 	}
 
 	/**
